@@ -1,0 +1,54 @@
+{
+  "mcpServers": {
+    "otto-von-guericke-ai": {
+      "command": "cargo",
+      "args": [
+        "run",
+        "--release",
+        "--quiet"
+      ],
+      "env": {
+        "RUST_LOG": "info",
+        "TITAN_PROTOCOL": "GUERICKE",
+        "TARGET_CHAIN": "Solana",
+        "FIPS_203_LEVEL": "ML-KEM-768",
+        "FIPS_204_LEVEL": "ML-DSA-65"
+      },
+      "tools": [
+        {
+          "name": "calculate_magdeburg_hemisphere_force",
+          "description": "Computes total tensile separation force required to pull evacuated hemispheres apart (F = pi r^2 Delta P)",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "radius_m": {
+                "type": "number"
+              },
+              "vacuum_kpa": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "radius_m"
+            ]
+          }
+        },
+        {
+          "name": "model_sulfur_globe_electrostatic_repulsion",
+          "description": "Simulates frictional static charge accumulation and electrostatic repulsion mechanics",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "rotation_rpm": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "rotation_rpm"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
